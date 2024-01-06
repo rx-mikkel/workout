@@ -1,0 +1,35 @@
+Needs to get in shape:
+2 - 3 - 4 rounds
+6 - 8 - 10 reps (individual exercises may adjust the number in either direction)
+2 - 3 exercises
+
+Works out regularly:
+3 - 4 - 5 rounds
+8 - 10 - 12 reps
+3 - 4 exercises
+
+In good shape:
+3 - 4 - 5 rounds
+10 - 12 - 14 reps
+3 - 4 - 5 exercises
+
+Categorize exercises by beginner, intermediate and expert
+Select equipment ['kettlebell', 'barbell']
+
+[
+    {
+        rounds: [2, 3, 4],
+        reps: [6, 8, 10],
+        exercises: [2, 3]
+    },
+    {
+        rounds: [3, 4, 5],
+        reps: [8, 10, 12],
+        exercises: [3, 4]
+    },
+    {
+        rounds: [3, 4, 5],
+        reps: [10, 11, 12],
+        exercises: [3, 4, 5]
+    }
+]

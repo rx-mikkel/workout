@@ -23,13 +23,14 @@ html {
 }
 
 header {
-	height: 4rem;
-	max-height: 4rem;
+	height: 5rem;
+	max-height: 5rem;
+	background-color: #020008;
 }
 
 .band {
     display: flex;
-    flex: 1;
+    flex: 0 1;
     justify-content: center;
 }
 
@@ -38,12 +39,31 @@ header {
     flex: 1; 
     flex-direction: column;
     padding: 1em;
-    max-width: 84rem;
+    max-width: 72rem;
+}
+
+header.band .content {
+	align-items: end;
+	justify-content: center;
+}
+
+.settings {
+	background-color: #020008;
+}
+
+.settingsSection {
+	padding-bottom: 1rem;
+}
+
+.saveSettings {
+	justify-content: end;
+	display: flex;
+	flex: 0 1;
 }
 
 p, a {
     font-family: 'Roboto', sans-serif;
-    line-height: 1.6em;
+    line-height: 1.5em;
 }
 
 a, a:visited {
@@ -63,8 +83,40 @@ h1 {
     font-size: 2.8em;
 }
 
-/*  */
+/* Button */
 
+button {
+	background-color: #04010d;
+	border: 2px solid #18074d;
+	color: #fff;
+	padding: 0.75rem 1.5rem;
+	line-height: 1rem;
+	font-size: 1.2rem;
+	border-radius: 0.5rem;
+	cursor: pointer;
+	transition: all .25s ease;
+
+	&.active {
+		border-color: #f1176a;
+		box-shadow: 0 0 5px #f1176a55, 0 1px 11px #f1176a33;
+		background: linear-gradient(90deg, #c40a2933 0%, #c40a2900 100%);
+	}
+}
+
+button:hover {
+	border-color: #230677;
+	background-color: #0b0225;
+}
+
+button.active:hover {
+	border-color: #f1176a;
+	background-color: #f1176a22;
+}
+
+.transparent {
+	opacity: 0;
+	cursor: default;
+}
 
 /* toggle */
   
@@ -123,4 +175,127 @@ hr {
 	border: none;
 	height: 2px;
 }
-  
+
+/* dice */
+
+.dice {
+	display: flex;
+	flex-direction: column;
+	align-items: end;
+}
+
+.bigDice {
+	align-items: center;
+	justify-content: center;
+	height: 20rem;
+}
+
+.bigDice .diceButton {
+	font-size: 6rem;
+	line-height: 6rem;
+}
+
+.diceButton {
+	transition: all .75s ease, border 1.25s ease, box-shadow 1.25s ease;
+}
+
+.diceButton:hover {
+	border: 2px solid #c40a29;
+	background-color: #c40a2922;
+	box-shadow: 0 0 4px #c40a2966, 0 0 11px #c40a2955, 0 0 15px #c40a2944;
+}
+
+/* workout */
+
+.workoutResult {
+	padding: 1rem 0;
+}
+
+.rounds {
+	padding: 2rem;
+	display: flex;
+	align-items: center;
+}
+
+.rounds h2 {
+	font-size: 5rem;
+	color:#fff;
+}
+
+.wod {
+	background: linear-gradient(120deg, #230236af 16%, #f50a51af 100%);
+	padding: 2px;
+	border-radius: 0.5rem;
+	display: flex;
+}
+
+.exerciseList {
+	display: flex;
+	flex: 1;
+	flex-direction: column;
+}
+
+.wodEntry {
+	display: flex;
+	flex: 0 1;
+	align-items: center;
+	background-color: #040111ed;
+	padding: 1rem 2rem;
+}
+
+.wodEntry:first-child {
+	border-radius: 0 0.5rem 0 0;
+}
+
+.wodEntry:last-child {
+	border-radius: 0 0 0.5rem 0;
+}
+/*
+.wodEntry:nth-child(odd) {
+	background-color: #04010df0;
+}
+*/
+.wodEntry h4 {
+	font-size: 2rem;
+	margin-right: 1rem;
+	width: 5rem;
+	text-align: right;
+	margin: 1rem;
+}
+
+.wodEntry + .wodEntry {
+	margin-top: 2px;
+}
+
+.exercise {
+	border: 2px solid #f16717;
+	border-radius: 0.25rem;
+	padding: 0.6rem 2rem;
+	font-size: 1.8rem;
+	min-width: 24rem;
+	background-color: #04010d;
+
+	&.intensity1 {
+		border-color: #3f055a;
+		background: linear-gradient(90deg, #3f055a33 0%, #3f055a00 100%);
+	}
+
+	&.intensity2 {
+		border-color: #770562;
+		background: linear-gradient(90deg, #77056233 0%, #77056200 100%);
+	}
+
+	&.intensity3 {
+		border-color: #860642;
+		background: linear-gradient(90deg, #86064233 0%, #86064200 100%);
+	}
+
+	&.intensity4 {
+		border-color: #c40a29;
+		background: linear-gradient(90deg, #c40a2933 0%, #c40a2900 100%);
+	}
+}
+
+.exercise p {
+	margin: 0;
+}
