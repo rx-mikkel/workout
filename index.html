@@ -128,17 +128,49 @@
 							baseRounds: 12,
 							intensity: 'intensity2'
 						},
+						{
+							name: 'Glute bridge',
+							baseRounds: 12,
+							intensity: 'intensity2'
+						},
+						{
+							name: 'Mountain climbers',
+							baseRounds: 16,
+							intensity: 'intensity3'
+						},
+						{
+							name: 'Tricep dips',
+							baseRounds: 12,
+							intensity: 'intensity2'
+						},
 					];
 
 					const randExercises = getRandomArrayIndex(currentWorkoutDifficulty.exercises);
 					const numberOfExercisesToday = currentWorkoutDifficulty.exercises[randExercises];
 
 					const todaysExercises = [];
+					let simpleExerciseClone = structuredClone(simpleExercises);
 
 					for (var index = 0; index < numberOfExercisesToday; index++) {
-						let exerciseIndex = Math.floor((Math.random() * simpleExercises.length));
+						let exerciseIndex = Math.floor((Math.random() * simpleExerciseClone.length));
+						
+						let exerciseEntry = simpleExerciseClone.splice(exerciseIndex, 1);
+						let selectedExercise = exerciseEntry[0];
+						console.log(selectedExercise)
+						console.log(simpleExerciseClone)
 
-						todaysExercises.push(simpleExercises[exerciseIndex]);
+						if(capacity == 0) {
+							selectedExercise.baseRounds = Math.floor(selectedExercise.baseRounds * 0.8);
+						}
+
+						if(capacity == 2) {
+							selectedExercise.baseRounds = Math.floor(selectedExercise.baseRounds * 1.2)
+						}
+
+						const randomRepsVariation = Math.floor((Math.random() * 5)) - 4 + +capacity;
+						selectedExercise.baseRounds = (selectedExercise.baseRounds + randomRepsVariation);
+
+						todaysExercises.push(selectedExercise);
 					}
 
 					this.todaysWorkout = todaysExercises;
