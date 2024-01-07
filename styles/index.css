@@ -313,5 +313,17 @@ hr {
 	html {
 		font-size: 10px;
 	}
+
+	.wod {
+		flex-direction: column;
+	}
+
+	.wodEntry {
+		padding: 1rem;
+	}
+
+	.exercise {
+		min-width: 20rem;
+	}
 }
 
