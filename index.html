@@ -93,7 +93,7 @@
 
 					let currentWorkoutDifficulty = workoutDifficulties[capacity];
 
-					const randRounds = Math.floor((Math.random() * currentWorkoutDifficulty.rounds.length));
+					const randRounds = getRandomArrayIndex(currentWorkoutDifficulty.rounds);
 
 					this.rounds = currentWorkoutDifficulty.rounds[randRounds];
 
@@ -130,8 +130,8 @@
 						},
 					];
 
-					const randExercises = Math.floor((Math.random() * currentWorkoutDifficulty.exercises.length));
-					const numberOfExercisesToday = currentWorkoutDifficulty.rounds[randExercises];
+					const randExercises = getRandomArrayIndex(currentWorkoutDifficulty.exercises);
+					const numberOfExercisesToday = currentWorkoutDifficulty.exercises[randExercises];
 
 					const todaysExercises = [];
 
@@ -144,6 +144,11 @@
 					this.todaysWorkout = todaysExercises;
 				},
 			};
+		}
+
+		function getRandomArrayIndex(array) {
+			const arrIndex = Math.floor((Math.random() * array.length));
+			return arrIndex;
 		}
 	</script>
 </html>
