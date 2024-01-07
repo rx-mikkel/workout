@@ -212,14 +212,16 @@ hr {
 }
 
 .rounds {
-	padding: 2rem;
+	padding: 0 2rem;
 	display: flex;
 	align-items: center;
+	white-space: nowrap;
 }
 
 .rounds h2 {
 	font-size: 5rem;
 	color:#fff;
+	line-height: 1rem;
 }
 
 .wod {
@@ -299,3 +301,17 @@ hr {
 .exercise p {
 	margin: 0;
 }
+
+@media screen and (max-width: 56rem) {
+	html {
+		font-size: 12px;
+	}
+}
+
+
+@media screen and (max-width: 40rem) {
+	html {
+		font-size: 10px;
+	}
+}
+

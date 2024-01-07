@@ -1,3 +1,4 @@
+<!doctype html>
 <html>
 	<head>
 		<link rel="stylesheet" href="styles/index.css">
@@ -44,37 +45,25 @@
 		<div class="band workout" x-data="workout()">
 			<div class="content" x-data="{ diceRolled: false }">
 				<div class="dice" :class="{ 'bigDice': !diceRolled }">
-					<button class="diceButton" x-on:click="diceRolled = true">Roll</button>
+					<button class="diceButton" @click="generateWorkout(), diceRolled = true">Roll</button>
 				</div>
-				<div class="workoutResult" x-show="diceRolled">
-					<div class="wod">
-						<div class="rounds">
-							<h2 x-text="rounds + ' x'"></h2>
-						</div>
-						<div class="exerciseList">
-							<div class="wodEntry">
-								<h4>18 x </h4>
-								<div class="exercise intensity3"><p>Squats</p></div>
+				<template x-if="diceRolled">
+					<div class="workoutResult">
+						<div class="wod">
+							<div class="rounds">
+								<h2 x-text="rounds + ' x'"></h2>
 							</div>
-							<div class="wodEntry">
-								<h4>8 x </h4>
-								<div class="exercise intensity4"><p>Burpees</p></div>
-							</div>
-							<div class="wodEntry">
-								<h4>9 x </h4>
-								<div class="exercise intensity1"><p>Push-press</p></div>
-							</div>
-							<div class="wodEntry">
-								<h4>12 x </h4>
-								<div class="exercise intensity2"><p>Push-ups</p></div>
-							</div>
-							<div class="wodEntry">
-								<h4>16 x </h4>
-								<div class="exercise intensity4"><p>Jump squats</p></div>
+							<div class="exerciseList">
+								<template x-for="exercise in todaysWorkout">
+									<div class="wodEntry">
+										<h4 x-text="exercise.baseRounds + ' x'"></h4>
+										<div class="exercise" :class="exercise.intensity"><p x-text="exercise.name"></p></div>
+									</div>
+								</template>
 							</div>
 						</div>
 					</div>
-				</div>
+				</template>
 			</div>
 		</div>
 	</body>
@@ -82,9 +71,77 @@
 	<script type="text/javascript">
 		function workout() {
 			return {
-				rounds: 3,
+				rounds: null,
+				todaysWorkout: null,
 				generateWorkout() {
-					console.log(rounds)
+					let capacity = localStorage.getItem("_x_workoutCapacity");
+
+					const workoutDifficulties = [
+						{
+							rounds: [2, 3, 4],
+							exercises: [2, 3]
+						},
+						{
+							rounds: [3, 4],
+							exercises: [3, 4]
+						},
+						{
+							rounds: [3, 4, 5],
+							exercises: [3, 4, 5]
+						}
+					];
+
+					let currentWorkoutDifficulty = workoutDifficulties[capacity];
+
+					const randRounds = Math.floor((Math.random() * currentWorkoutDifficulty.rounds.length));
+
+					this.rounds = currentWorkoutDifficulty.rounds[randRounds];
+
+					const simpleExercises = [
+						{
+							name: 'Squats',
+							baseRounds: 16,
+							intensity: 'intensity3'
+						},
+						{
+							name: 'Burpees',
+							baseRounds: 10,
+							intensity: 'intensity4'
+						},
+						{
+							name: 'Push-press',
+							baseRounds: 10,
+							intensity: 'intensity1'
+						},
+						{
+							name: 'Push-ups',
+							baseRounds: 12,
+							intensity: 'intensity2'
+						},
+						{
+							name: 'Jump squats',
+							baseRounds: 12,
+							intensity: 'intensity4'
+						},
+						{
+							name: 'Lunges',
+							baseRounds: 12,
+							intensity: 'intensity2'
+						},
+					];
+
+					const randExercises = Math.floor((Math.random() * currentWorkoutDifficulty.exercises.length));
+					const numberOfExercisesToday = currentWorkoutDifficulty.rounds[randExercises];
+
+					const todaysExercises = [];
+
+					for (var index = 0; index < numberOfExercisesToday; index++) {
+						let exerciseIndex = Math.floor((Math.random() * simpleExercises.length));
+
+						todaysExercises.push(simpleExercises[exerciseIndex]);
+					}
+
+					this.todaysWorkout = todaysExercises;
 				},
 			};
 		}
