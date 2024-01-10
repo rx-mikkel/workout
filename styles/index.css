@@ -83,6 +83,11 @@ h1 {
     font-size: 2.8em;
 }
 
+.ice {
+	filter: blur(2.5px) grayscale(20%) brightness(130%);
+	pointer-events: none;
+}
+
 /* Button */
 
 button {
@@ -159,7 +164,7 @@ input:where([type="checkbox"][role="switch"]):checked {
 input:where([type="checkbox"][role="switch"]):checked:before {
 	background-color: #ed831f;
 	box-shadow: 0 1px 3px rgba(232, 177, 49, 0.2), 0 1px 9px rgba(232, 177, 49, 0.1);
-	margin-left: 1.86em
+	margin-left: 1.86em;
 }
 
 input:where([type="checkbox"][role="switch"]):disabled {
@@ -206,6 +211,10 @@ hr {
 }
 
 /* workout */
+
+.workout .content {
+	transition: all .5s ease;
+}
 
 .workoutResult {
 	padding: 1rem 0;
