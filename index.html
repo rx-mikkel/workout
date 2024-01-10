@@ -8,6 +8,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=0">
 		<script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/persist@3.x.x/dist/cdn.min.js"></script>
 		<script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+		<link rel="manifest" href="manifest.json" />
 	</head>
 	<body x-data="{ settingsMenuOpen: $persist(true) }">
 		<header class="band">
@@ -181,4 +182,12 @@
 			return arrIndex;
 		}
 	</script>
+
+	<script>
+		if (!navigator.serviceWorker.controller) {
+			navigator.serviceWorker.register("/sw.js").then(function(reg) {
+				console.log("Service worker has been registered for scope: " + reg.scope);
+			});
+		}
+   </script>
 </html>
