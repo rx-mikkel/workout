@@ -94,9 +94,9 @@ button {
 	background-color: #04010d;
 	border: 2px solid #230236;
 	color: #fff;
-	padding: 0.75rem 1.5rem;
+	padding: 1rem 1.5rem;
 	line-height: 1rem;
-	font-size: 1.2rem;
+	font-size: 1.5rem;
 	border-radius: 0.5rem;
 	cursor: pointer;
 	transition: all .25s ease;
@@ -318,10 +318,6 @@ hr {
 }
 
 @media screen and (max-width: 40rem) {
-	html {
-		font-size: 10px;
-	}
-
 	.wod {
 		flex-direction: column;
 	}
