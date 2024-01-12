@@ -80,7 +80,9 @@ h1 {
 }
 
 .ice {
-	filter: blur(2.5px) grayscale(20%) brightness(130%);
+	filter: blur(2.5px) grayscale(30%) brightness(130%);
+	opacity: .6;
+	transform: scale(.8);
 	pointer-events: none;
 }
 

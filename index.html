@@ -20,7 +20,7 @@
 			<div class="content">
 				<div class="settingsSection" x-data="{ workoutCapacity: $persist(1) }">
 					<h2>Are you used to working out?</h2>
-					<p>This is used to determine how many rounds, repetitions and exercises to give you.</p>
+					<p>This determines how many rounds, repetitions and exercises to give you.</p>
 					<p>Start low if you are new or had a longer break. You will move this slider soon enough!</p>
 					<button x-on:click="workoutCapacity = 0" :class="{ 'active': workoutCapacity === 0 }">A little</button>
 					<button x-on:click="workoutCapacity = 1" :class="{ 'active': workoutCapacity === 1 }">A decent amount</button>
@@ -28,7 +28,7 @@
 				</div>
 				<div class="settingsSection" x-data="{ workoutExperience: $persist(1) }">
 					<h2>How experienced are you?</h2>
-					<p>This is used to determine how advanced the exercises can be.<br>We recommend working out with others - at least some of the time - and be open to suggestions about improving your form in order to stay healthy and avoid injury.<br>It is also a great opportunity to have fun!</p>
+					<p>Determines how advanced the exercises can be.<br>We recommend working out with others - at least some of the time - to improve your form, avoid injury and have fun!</p>
 					<button x-on:click="workoutExperience = 0" :class="{ 'active': workoutExperience === 0 }">Beginner</button>
 					<button x-on:click="workoutExperience = 1" :class="{ 'active': workoutExperience === 1 }">Intermediate</button>
 					<button x-on:click="workoutExperience = 2" :class="{ 'active': workoutExperience === 2 }">Expert</button>
@@ -309,6 +309,8 @@
    </script>
 	<!-- TODO:
 		Animate dice proper. Animate workout
+		Add a few more exercises
+		Import arrays from file
 
 		Fix perspective in app icon
 		Vectorize it
