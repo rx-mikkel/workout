@@ -230,7 +230,7 @@ hr {
 }
 
 .wod {
-	background: linear-gradient(120deg, #230236af 16%, #f50a51af 100%);
+	background: linear-gradient(120deg, #230236af 8%, #f50a51af 100%);
 	padding: 2px;
 	border-radius: 0.5rem;
 	display: flex;

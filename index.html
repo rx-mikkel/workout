@@ -92,6 +92,8 @@
 						}
 					];
 
+					let skill = localStorage.getItem("_x_workoutExperience");
+
 					// resolves to a string... not ideal
 					let enableKettlebell = localStorage.getItem("_x_kettlebell");
 					let enableBarbell = localStorage.getItem("_x_barbell");
@@ -106,70 +108,101 @@
 						{
 							name: 'Squats',
 							baseRounds: 18,
-							intensity: 'intensity3'
+							intensity: 'intensity3',
+							skillLevel: 1,
 						},
 						{
 							name: 'Burpees',
 							baseRounds: 9,
-							intensity: 'intensity4'
+							intensity: 'intensity4',
+							skillLevel: 1,
 						},
 						{
 							name: 'Push-ups',
 							baseRounds: 12,
-							intensity: 'intensity2'
+							intensity: 'intensity2',
+							skillLevel: 1,
 						},
 						{
 							name: 'Jump squats',
 							baseRounds: 14,
-							intensity: 'intensity4'
+							intensity: 'intensity4',
+							skillLevel: 1,
 						},
 						{
 							name: 'Lunges',
 							baseRounds: 12,
-							intensity: 'intensity2'
+							intensity: 'intensity2',
+							skillLevel: 1,
 						},
 						{
 							name: 'Glute bridge',
 							baseRounds: 12,
-							intensity: 'intensity2'
+							intensity: 'intensity2',
+							skillLevel: 1,
 						},
 						{
 							name: 'Mountain climbers',
 							baseRounds: 16,
-							intensity: 'intensity3'
+							intensity: 'intensity3',
+							skillLevel: 2,
 						},
 						{
 							name: 'Tricep dips',
 							baseRounds: 10,
-							intensity: 'intensity2'
+							intensity: 'intensity2',
+							skillLevel: 2,
+						},
+						{
+							name: 'Plank reach-under',
+							baseRounds: 12,
+							intensity: 'intensity2',
+							skillLevel: 1,
+						},
+						{
+							name: 'Step-ups',
+							baseRounds: 12,
+							intensity: 'intensity2',
+							skillLevel: 1,
 						},
 					];
 
 					const kettlebellExercises = [
 						{
+							name: 'Kettlebell Swing',
+							baseRounds: 12,
+							intensity: 'intensity3',
+							skillLevel: 1,
+						},
+						{
 							name: 'Goblet Squats',
 							baseRounds: 8,
-							intensity: 'intensity3'
+							intensity: 'intensity3',
+							skillLevel: 1,
 						},
 						{
 							name: 'Push-press',
 							baseRounds: 8,
-							intensity: 'intensity1'
+							intensity: 'intensity1',
+							skillLevel: 1,
 						},
 						{
 							name: 'Weighted Lunges',
 							baseRounds: 12,
-							intensity: 'intensity2'
+							intensity: 'intensity2',
+							skillLevel: 1,
 						},
 						{
 							name: 'Turkish getups',
 							baseRounds: 5,
-							intensity: 'intensity2'
+							intensity: 'intensity2',
+							skillLevel: 3,
 						},
 						{
 							name: 'Deadlift',
 							baseRounds: 8,
-							intensity: 'intensity1'
+							intensity: 'intensity1',
+							skillLevel: 1,
 						},
 					];
 
@@ -177,42 +210,50 @@
 						{
 							name: 'Back Squats',
 							baseRounds: 12,
-							intensity: 'intensity1'
+							intensity: 'intensity1',
+							skillLevel: 1,
 						},
 						{
 							name: 'Front Squats',
 							baseRounds: 10,
-							intensity: 'intensity2'
+							intensity: 'intensity2',
+							skillLevel: 2,
 						},
 						{
 							name: 'Overhead Squats',
 							baseRounds: 8,
-							intensity: 'intensity2'
+							intensity: 'intensity2',
+							skillLevel: 3,
 						},
 						{
 							name: 'Push-press',
 							baseRounds: 8,
-							intensity: 'intensity2'
+							intensity: 'intensity2',
+							skillLevel: 1,
 						},
 						{
 							name: 'Deadlift',
 							baseRounds: 8,
-							intensity: 'intensity1'
+							intensity: 'intensity1',
+							skillLevel: 1,
 						},
 						{
 							name: 'Clean',
 							baseRounds: 8,
-							intensity: 'intensity2'
+							intensity: 'intensity2',
+							skillLevel: 2,
 						},
 						{
 							name: 'Snatch',
 							baseRounds: 6,
-							intensity: 'intensity3'
+							intensity: 'intensity3',
+							skillLevel: 3,
 						},
 						{
 							name: 'Clean & Jerk',
 							baseRounds: 8,
-							intensity: 'intensity3'
+							intensity: 'intensity3',
+							skillLevel: 3,
 						},
 					];
 
@@ -229,6 +270,8 @@
 					if (enableBarbell == 'true') {
 						exercisePool = exercisePool.concat(barbellExercises);
 					}
+
+					exercisePool = exercisePool.filter((ex) => (ex.skillLevel - 1) <= skill);
 
 					for (var index = 0; index < numberOfExercisesToday; index++) {
 						let exerciseIndex = Math.floor((Math.random() * exercisePool.length));
@@ -265,7 +308,7 @@
 		}
    </script>
 	<!-- TODO:
-
+		Animate dice proper. Animate workout
 
 		Fix perspective in app icon
 		Vectorize it
