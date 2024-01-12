@@ -79,11 +79,11 @@
 
 					const workoutDifficulties = [
 						{
-							rounds: [2, 3, 4],
-							exercises: [2, 3]
+							rounds: [2, 3, 3, 4],
+							exercises: [2, 3, 3, 4]
 						},
 						{
-							rounds: [3, 4],
+							rounds: [3, 4, 4],
 							exercises: [3, 4]
 						},
 						{
@@ -101,17 +101,17 @@
 					const simpleExercises = [
 						{
 							name: 'Squats',
-							baseRounds: 16,
+							baseRounds: 18,
 							intensity: 'intensity3'
 						},
 						{
 							name: 'Burpees',
-							baseRounds: 10,
+							baseRounds: 9,
 							intensity: 'intensity4'
 						},
 						{
 							name: 'Push-press',
-							baseRounds: 10,
+							baseRounds: 8,
 							intensity: 'intensity1'
 						},
 						{
@@ -121,7 +121,7 @@
 						},
 						{
 							name: 'Jump squats',
-							baseRounds: 12,
+							baseRounds: 14,
 							intensity: 'intensity4'
 						},
 						{
@@ -141,12 +141,12 @@
 						},
 						{
 							name: 'Tricep dips',
-							baseRounds: 12,
+							baseRounds: 10,
 							intensity: 'intensity2'
 						},
 						{
 							name: 'Turkish getups',
-							baseRounds: 4,
+							baseRounds: 5,
 							intensity: 'intensity2'
 						},
 						{
@@ -168,15 +168,11 @@
 						let exerciseEntry = simpleExerciseClone.splice(exerciseIndex, 1);
 						let selectedExercise = exerciseEntry[0];
 
-						if(capacity == 0) {
-							selectedExercise.baseRounds = Math.floor(selectedExercise.baseRounds * 0.8);
-						}
-
 						if(capacity == 2) {
 							selectedExercise.baseRounds = Math.floor(selectedExercise.baseRounds * 1.2)
 						}
 
-						const randomRepsVariation = Math.floor((Math.random() * 5)) - 4 + +capacity;
+						const randomRepsVariation = Math.floor((Math.random() * 5)) - 3 + (capacity * 3);
 						selectedExercise.baseRounds = (selectedExercise.baseRounds + randomRepsVariation);
 
 						todaysExercises.push(selectedExercise);

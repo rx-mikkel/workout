@@ -8,6 +8,7 @@
 
 html, body {
     font-size: 16px;
+	font-family: 'Roboto', sans-serif;
     padding: 0;
     margin: 0;
     display: flex;
@@ -62,7 +63,6 @@ header.band .content {
 }
 
 p, a {
-    font-family: 'Roboto', sans-serif;
     line-height: 1.5em;
 }
 
@@ -73,10 +73,6 @@ a, a:visited {
 
 a:hover {
     text-decoration: underline;
-}
-
-h1, h2, h3, h4, h5, h6 {
-    font-family: 'Roboto', sans-serif;
 }
 
 h1 {
