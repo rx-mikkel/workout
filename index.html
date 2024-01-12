@@ -33,10 +33,10 @@
 					<button x-on:click="workoutExperience = 1" :class="{ 'active': workoutExperience === 1 }">Intermediate</button>
 					<button x-on:click="workoutExperience = 2" :class="{ 'active': workoutExperience === 2 }">Expert</button>
 				</div>
-				<div class="settingsSection" x-data="{ equipment: $persist([false,false]) }">
+				<div class="settingsSection" x-data="{ kettlebell: $persist(false), barbell: $persist(false) }">
 					<h2>Equipment</h2>
-					<button x-on:click="equipment[0] = ! equipment[0]" :class="{ 'active': equipment[0] === true }">Kettlebell</button>
-					<button x-on:click="equipment[1] = ! equipment[1]" :class="{ 'active': equipment[1] === true }">Barbell</button>
+					<button x-on:click="kettlebell = ! kettlebell" :class="{ 'active': kettlebell === true }">Kettlebell</button>
+					<button x-on:click="barbell = ! barbell" :class="{ 'active': barbell === true }">Barbell</button>
 				</div>
 				<div class="saveSettings">
 					<button x-on:click="settingsMenuOpen = false">Save and close</button>
@@ -92,6 +92,10 @@
 						}
 					];
 
+					// resolves to a string... not ideal
+					let enableKettlebell = localStorage.getItem("_x_kettlebell");
+					let enableBarbell = localStorage.getItem("_x_barbell");
+
 					let currentWorkoutDifficulty = workoutDifficulties[capacity];
 
 					const randRounds = getRandomArrayIndex(currentWorkoutDifficulty.rounds);
@@ -108,11 +112,6 @@
 							name: 'Burpees',
 							baseRounds: 9,
 							intensity: 'intensity4'
-						},
-						{
-							name: 'Push-press',
-							baseRounds: 8,
-							intensity: 'intensity1'
 						},
 						{
 							name: 'Push-ups',
@@ -144,6 +143,24 @@
 							baseRounds: 10,
 							intensity: 'intensity2'
 						},
+					];
+
+					const kettlebellExercises = [
+						{
+							name: 'Goblet Squats',
+							baseRounds: 8,
+							intensity: 'intensity3'
+						},
+						{
+							name: 'Push-press',
+							baseRounds: 8,
+							intensity: 'intensity1'
+						},
+						{
+							name: 'Weighted Lunges',
+							baseRounds: 12,
+							intensity: 'intensity2'
+						},
 						{
 							name: 'Turkish getups',
 							baseRounds: 5,
@@ -156,16 +173,69 @@
 						},
 					];
 
+					const barbellExercises = [
+						{
+							name: 'Back Squats',
+							baseRounds: 12,
+							intensity: 'intensity1'
+						},
+						{
+							name: 'Front Squats',
+							baseRounds: 10,
+							intensity: 'intensity2'
+						},
+						{
+							name: 'Overhead Squats',
+							baseRounds: 8,
+							intensity: 'intensity2'
+						},
+						{
+							name: 'Push-press',
+							baseRounds: 8,
+							intensity: 'intensity2'
+						},
+						{
+							name: 'Deadlift',
+							baseRounds: 8,
+							intensity: 'intensity1'
+						},
+						{
+							name: 'Clean',
+							baseRounds: 8,
+							intensity: 'intensity2'
+						},
+						{
+							name: 'Snatch',
+							baseRounds: 6,
+							intensity: 'intensity3'
+						},
+						{
+							name: 'Clean & Jerk',
+							baseRounds: 8,
+							intensity: 'intensity3'
+						},
+					];
+
 					const randExercises = getRandomArrayIndex(currentWorkoutDifficulty.exercises);
 					const numberOfExercisesToday = currentWorkoutDifficulty.exercises[randExercises];
 
 					const todaysExercises = [];
-					let simpleExerciseClone = structuredClone(simpleExercises);
+					let exercisePool = structuredClone(simpleExercises);
+
+					if (enableKettlebell == 'true') {
+						exercisePool = exercisePool.concat(kettlebellExercises);
+					}
+
+					if (enableBarbell == 'true') {
+						exercisePool = exercisePool.concat(barbellExercises);
+					}
+
+					console.log(exercisePool)
 
 					for (var index = 0; index < numberOfExercisesToday; index++) {
-						let exerciseIndex = Math.floor((Math.random() * simpleExerciseClone.length));
+						let exerciseIndex = Math.floor((Math.random() * exercisePool.length));
 						
-						let exerciseEntry = simpleExerciseClone.splice(exerciseIndex, 1);
+						let exerciseEntry = exercisePool.splice(exerciseIndex, 1);
 						let selectedExercise = exerciseEntry[0];
 
 						if(capacity == 2) {
@@ -196,4 +266,11 @@
 			});
 		}
    </script>
+	<!-- TODO:
+
+
+		Fix perspective in app icon
+		Vectorize it
+	-->
 </html>
+
