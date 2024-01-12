@@ -250,7 +250,7 @@ hr {
 	padding: 1rem 2rem;
 }
 
-.wodEntry:first-child {
+.wodEntry:first-of-type {
 	border-radius: 0 0.5rem 0 0;
 }
 
