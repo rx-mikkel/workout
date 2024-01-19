@@ -1,6 +1,7 @@
 <!doctype html>
-<html>
+<html lang="en-UK">
 	<head>
+		<title>Quick workout generator</title>
 		<link rel="stylesheet" href="styles/index.css">
 		<meta charset="UTF-8">
 		<meta name="title" content="Workout generator">
@@ -52,13 +53,40 @@
 					<div class="workoutResult">
 						<div class="wod">
 							<div class="rounds">
-								<h2 x-text="rounds + ' x'"></h2>
+								<h2><span x-text="rounds"></span><span class="times"> x</span></h2>
 							</div>
 							<div class="exerciseList">
 								<template x-for="exercise in todaysWorkout">
 									<div class="wodEntry">
-										<h4 x-text="exercise.baseRounds + ' x'"></h4>
-										<div class="exercise" :class="exercise.intensity"><p x-text="exercise.name"></p></div>
+										<h4><span x-text="exercise.baseRounds"></span><span class="times"> x</span></h4>
+										<div class="exercise" :class="exercise.intensity">
+											<div class="exercise-avatar">
+												<div :class="exercise.id">
+													<div class="barbell">
+														<div class="plate left"></div>
+														<div class="plate left-inner"></div>
+														<div class="plate right-inner"></div>
+														<div class="plate right"></div>
+													</div>
+													<div class="body">
+														<div class="head"></div>
+														<div class="arm left-arm">
+															<div class="arm underarm"></div>
+														</div>
+														<div class="arm right-arm">
+															<div class="arm underarm"></div>
+														</div>
+														<div class="leg left-leg">
+															<div class="leg lower-leg"></div>
+														</div>
+														<div class="leg right-leg">
+															<div class="leg lower-leg"></div>
+														</div>
+													</div>
+												</div>
+											</div>
+											<p x-text="exercise.name"></p>
+										</div>
 									</div>
 								</template>
 							</div>
@@ -106,61 +134,71 @@
 
 					const simpleExercises = [
 						{
-							name: 'Squats',
+							name: 'Squat',
+							id: 'squat',
 							baseRounds: 18,
 							intensity: 'intensity3',
 							skillLevel: 1,
 						},
 						{
-							name: 'Burpees',
+							name: 'Burpee',
+							id: 'burpee',
 							baseRounds: 9,
 							intensity: 'intensity4',
 							skillLevel: 1,
 						},
 						{
-							name: 'Push-ups',
+							name: 'Push-up',
+							id: 'pushup',
 							baseRounds: 12,
 							intensity: 'intensity2',
 							skillLevel: 1,
 						},
 						{
-							name: 'Jump squats',
+							name: 'Jump squat',
+							id: 'jumpsquat',
 							baseRounds: 14,
 							intensity: 'intensity4',
 							skillLevel: 1,
 						},
 						{
-							name: 'Lunges',
+							name: 'Lunge',
+							id: 'lunge',
 							baseRounds: 12,
 							intensity: 'intensity2',
 							skillLevel: 1,
 						},
 						{
 							name: 'Glute bridge',
+							id: 'glutebridge',
 							baseRounds: 12,
 							intensity: 'intensity2',
 							skillLevel: 1,
 						},
 						{
-							name: 'Mountain climbers',
+							name: 'Mountain climber',
+							id: 'mountainclimber',
 							baseRounds: 16,
 							intensity: 'intensity3',
 							skillLevel: 2,
 						},
 						{
-							name: 'Tricep dips',
+							name: 'Tricep dip',
+							id: 'tricepdip',
 							baseRounds: 10,
 							intensity: 'intensity2',
 							skillLevel: 2,
 						},
 						{
 							name: 'Plank reach-under',
+							id: 'plankreachunder',
 							baseRounds: 12,
 							intensity: 'intensity2',
 							skillLevel: 1,
 						},
 						{
-							name: 'Step-ups',
+							name: 'Step-up',
+							id: 'stepup',
 							baseRounds: 12,
 							intensity: 'intensity2',
 							skillLevel: 1,
@@ -170,36 +208,42 @@
 					const kettlebellExercises = [
 						{
 							name: 'Kettlebell Swing',
+							id: 'kbswing',
 							baseRounds: 12,
 							intensity: 'intensity3',
 							skillLevel: 1,
 						},
 						{
-							name: 'Goblet Squats',
+							name: 'Goblet Squat',
+							id: 'kbgobletsquat',
 							baseRounds: 8,
 							intensity: 'intensity3',
 							skillLevel: 1,
 						},
 						{
 							name: 'Push-press',
+							id: 'kbpushpress',
 							baseRounds: 8,
 							intensity: 'intensity1',
 							skillLevel: 1,
 						},
 						{
-							name: 'Weighted Lunges',
+							name: 'Weighted Lunge',
+							id: 'kbweightedlunge',
 							baseRounds: 12,
 							intensity: 'intensity2',
 							skillLevel: 1,
 						},
 						{
-							name: 'Turkish getups',
+							name: 'Turkish getup',
+							id: 'kbturkishgetup',
 							baseRounds: 5,
 							intensity: 'intensity2',
 							skillLevel: 3,
 						},
 						{
 							name: 'Deadlift',
+							id: 'kbdeadlift',
 							baseRounds: 8,
 							intensity: 'intensity1',
 							skillLevel: 1,
@@ -208,49 +252,57 @@
 
 					const barbellExercises = [
 						{
-							name: 'Back Squats',
+							name: 'Back Squat',
+							id: 'bbbacksquat',
 							baseRounds: 12,
 							intensity: 'intensity1',
 							skillLevel: 1,
 						},
 						{
-							name: 'Front Squats',
+							name: 'Front Squat',
+							id: 'bbfrontsquat',
 							baseRounds: 10,
 							intensity: 'intensity2',
 							skillLevel: 2,
 						},
 						{
-							name: 'Overhead Squats',
+							name: 'Overhead Squat',
+							id: 'bboverheadsquat',
 							baseRounds: 8,
 							intensity: 'intensity2',
 							skillLevel: 3,
 						},
 						{
 							name: 'Push-press',
+							id: 'bbpushpress',
 							baseRounds: 8,
 							intensity: 'intensity2',
 							skillLevel: 1,
 						},
 						{
 							name: 'Deadlift',
+							id: 'bbdeadlift',
 							baseRounds: 8,
 							intensity: 'intensity1',
 							skillLevel: 1,
 						},
 						{
 							name: 'Clean',
+							id: 'bbclean',
 							baseRounds: 8,
 							intensity: 'intensity2',
 							skillLevel: 2,
 						},
 						{
 							name: 'Snatch',
+							id: 'bbsnatch',
 							baseRounds: 6,
 							intensity: 'intensity3',
 							skillLevel: 3,
 						},
 						{
 							name: 'Clean & Jerk',
+							id: 'bbcleanjerk',
 							baseRounds: 8,
 							intensity: 'intensity3',
 							skillLevel: 3,

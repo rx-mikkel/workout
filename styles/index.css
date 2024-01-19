@@ -1,4 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700&display=swap');
+@import './deadlift.css';
+@import './squat.css';
 
 *,
 *::before,
@@ -50,6 +52,7 @@ header.band .content {
 
 .settings {
 	background-color: #020008;
+	box-shadow: 0 12px 72px #02000888;
 }
 
 .settingsSection {
@@ -79,9 +82,14 @@ h1 {
     font-size: 2.8em;
 }
 
+.times {
+	font-weight: 100;
+	color: #860642;
+}
+
 .ice {
 	filter: blur(2.5px) grayscale(30%) brightness(130%);
-	opacity: .6;
+	opacity: .4;
 	transform: scale(.8);
 	pointer-events: none;
 }
@@ -277,9 +285,10 @@ hr {
 }
 
 .exercise {
+	display: flex;
+	align-items: center;
 	border: 2px solid #f16717;
 	border-radius: 0.25rem;
-	padding: 0.6rem 2rem;
 	font-size: 1.8rem;
 	min-width: 24rem;
 	background-color: #04010d;
@@ -305,6 +314,123 @@ hr {
 	}
 }
 
+/* Training Avatars */
+
+.exercise-avatar {
+	display: flex;
+	width: 68px;
+	height: 68px;
+	justify-content: center;
+	margin-right: 1rem;
+}
+
+.exercise-avatar > div {
+	position: relative;
+	display: none;
+	filter: drop-shadow(0 0 4px #000000ec);
+}
+
+.head, .body, .arm, .leg, .barbell, .plate {
+	background-color: #c40a29;
+	position: absolute;
+}
+
+.intensity1 .head, .intensity1 .body, .intensity1 .arm, .intensity1 .leg  {
+	background-color: #3f055a;
+}
+
+.intensity2 .head, .intensity2 .body, .intensity2 .arm, .intensity2 .leg  {
+	background-color: #770562;
+}
+
+.intensity3 .head, .intensity3 .body, .intensity3 .arm, .intensity3 .leg  {
+	background-color: #860642;
+}
+
+.intensity4 .head, .intensity4 .body, .intensity4 .arm, .intensity4 .leg  {
+	background-color: #c40a29;
+}
+
+.head {
+	height: 12px;
+	width: 12px;
+	border-radius: 2rem;
+	transform: translate(-3px, -16px);
+}
+
+.body {
+	width: 6px;
+	height: 22px;
+	border-radius: 0.3rem;
+}
+
+.arm {
+	height: 12px;
+	width: 4px;
+	border-radius: 2px;
+}
+
+.left-arm, .right-arm {
+	transform-origin: 3px 1px;
+	left: -1px;
+}
+
+.underarm {
+	top: 10px;
+	transform-origin: 2px 2px;
+}
+
+.leg {
+	height: 16px;
+	width: 4px;
+	border-radius: 2px;
+}
+
+.left-leg, .right-leg {
+	left: 1px;
+	top: 18px;
+	transform-origin: 3px 1px;
+}
+
+.left-leg .lower-leg, .right-leg .lower-leg {
+	top: 12px;
+	transform-origin: 2px 2px;
+}
+
+.barbell {
+	width: 42px;
+	height: 2px;
+	display: none;
+	z-index: 2;
+}
+
+.plate {
+	width: 2px;
+	height: 10px;
+	top: -4px;
+	border: 1px;
+}
+
+.plate.left {
+	left: 2px;
+} 
+
+.plate.left-inner {
+	left: 5px;
+} 
+
+.plate.right-inner {
+	right: 5px;
+} 
+
+.plate.right {
+	right: 2px;
+} 
+
+.exercise-avatar .squat, .exercise-avatar .bbdeadlift {
+	display: flex;
+}
+
 .exercise p {
 	margin: 0;
 }
@@ -326,6 +452,12 @@ hr {
 
 	.exercise {
 		min-width: 20rem;
+		flex: 1;
+		font-size: 1.6rem;
+	}
+
+	.wodEntry + .wodEntry {
+		margin-top: 0;
 	}
 }
 

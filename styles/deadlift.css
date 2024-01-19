@@ -1,0 +1,64 @@
+.bbdeadlift .body {
+	top: 28px;
+  	left: -2px;
+	height: 14px;
+}
+
+.bbdeadlift .head {
+	transform: translate(-3px, -12px);
+}
+
+.bbdeadlift .left-arm {
+	transform: rotate(-20deg);
+	left: 4px;
+	transform-origin: 2px 1px;
+	z-index: 4;
+}
+
+.bbdeadlift .right-arm {
+	transform: rotate(20deg);
+	left: -2px;
+	z-index: 4;
+}
+
+.bbdeadlift .right-arm .underarm {
+	transform: rotate(-15deg);
+}
+
+.bbdeadlift .left-arm .underarm {
+	transform: rotate(15deg);
+}
+
+.bbdeadlift .left-leg, .bbdeadlift .right-leg {
+	top: 12px;
+	transform-origin: 2px 0;
+	height: 14px;
+}
+
+.bbdeadlift .right-leg {
+	transform: rotate(70deg);
+	left: 2px;
+}
+
+.bbdeadlift .left-leg {
+	transform: rotate(-70deg);
+	left: 0px;
+}
+
+.bbdeadlift .left-leg .lower-leg {
+	transform: rotate(65deg);
+}
+
+.bbdeadlift .right-leg .lower-leg {
+	transform: rotate(-65deg);
+}
+
+.bbdeadlift .lower-leg {
+	top: 11px;
+}
+
+.bbdeadlift .barbell {
+	display: block;
+	top: 46px;
+  	left: -20px;
+}

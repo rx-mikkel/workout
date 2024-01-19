@@ -1,0 +1,19 @@
+.squat .body {
+	top: 24px;
+  	left: -12px;
+
+	rotate: 35deg;
+}
+
+.squat .left-arm, .squat .right-arm {
+	transform: rotate(-125deg);
+}
+
+.squat .right-leg, .squat .left-leg {
+	transform: rotate(235deg);
+}
+
+.squat .lower-leg {
+	transform: rotate(125deg);
+}
+
