@@ -1,0 +1,44 @@
+.burpee .body {
+    top: 10px;
+    left: -3px;
+}
+
+.burpee .head {
+    transform: translate(-3px, -13px);
+    border: 1px solid #000;
+}
+
+.burpee .arm {
+    height: 14px;
+}
+
+.burpee .right-arm {
+    transform: rotate(-140deg);
+    left: 2px;
+}
+
+.burpee .right-arm .underarm {
+    transform: rotate(-70deg);
+}
+
+.burpee .left-arm {
+    transform: rotate(140deg);
+    left: -2px;
+    top: 1px;
+    transform-origin: 2px 1px;
+}
+
+.burpee .left-arm .underarm {
+    transform: rotate(70deg);
+}
+
+.burpee .left-leg {
+    left: 0px;
+    transform: rotate(6deg);
+}
+
+.burpee .right-leg {
+    left: 2px;
+    transform: rotate(-6deg);
+    transform-origin: 2px 1px;
+}

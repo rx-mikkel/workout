@@ -1,0 +1,33 @@
+.lunge .body {
+    top: 25px;
+    left: -1px;
+}
+
+.lunge .head {
+    transform: translate(-3px, -13px);
+}
+
+.lunge .left-arm {
+    transform: rotate(12deg);
+}
+
+.lunge .left-arm .underarm {
+    transform: rotate(-34deg);
+}
+
+.lunge .left-leg {
+    transform: rotate(-90deg);
+}
+
+.lunge .left-leg .lower-leg {
+    transform: rotate(82deg);
+}
+
+.lunge .right-leg .lower-leg {
+    transform: rotate(88deg);
+}
+
+.lunge .right-leg {
+    left: 0px;
+    transform: rotate(12deg);
+}

@@ -1,6 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700&display=swap');
 @import './deadlift.css';
 @import './squat.css';
+@import './lunge.css';
+@import './burpee.css';
 
 *,
 *::before,
@@ -258,6 +260,7 @@ hr {
 	align-items: center;
 	background-color: #040111ed;
 	padding: 1rem 2rem;
+	white-space: nowrap;
 }
 
 .wodEntry:first-of-type {
@@ -275,7 +278,7 @@ hr {
 .wodEntry h4 {
 	font-size: 2rem;
 	margin-right: 1rem;
-	width: 5rem;
+	width: 4rem;
 	text-align: right;
 	margin: 1rem;
 }
@@ -327,7 +330,7 @@ hr {
 .exercise-avatar > div {
 	position: relative;
 	display: none;
-	filter: drop-shadow(0 0 4px #000000ec);
+	filter: drop-shadow(0 0 4px #000000);
 }
 
 .head, .body, .arm, .leg, .barbell, .plate {
@@ -355,7 +358,7 @@ hr {
 	height: 12px;
 	width: 12px;
 	border-radius: 2rem;
-	transform: translate(-3px, -16px);
+	transform: translate(-3px, -15px);
 }
 
 .body {
@@ -427,7 +430,7 @@ hr {
 	right: 2px;
 } 
 
-.exercise-avatar .squat, .exercise-avatar .bbdeadlift {
+.exercise-avatar .squat, .exercise-avatar .bbdeadlift, .exercise-avatar .lunge, .exercise-avatar .burpee {
 	display: flex;
 }
 
