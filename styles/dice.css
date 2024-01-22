@@ -1,0 +1,97 @@
+.scene {
+    width: 200px;
+    height: 100px;
+    perspective: 220px;
+}
+
+.dice {
+	display: flex;
+	flex-direction: column;
+	align-items: end;
+	justify-content: center;
+	height: 8rem;
+    position: relative;
+}
+
+.bigDice {
+	height: 20rem;
+}
+
+.diceButton {
+	transition: all .75s ease, border 1.25s ease, box-shadow 1.25s ease;
+}
+
+.diceButton, .diceButton:hover {
+	border: none;
+	background-color: transparent;
+	box-shadow: none
+}
+
+.diceButton {
+    transform: scale(0.6) translate(50%, 0);
+    position: absolute;
+}
+
+.bigDice .diceButton {
+    transform: translate(-50%, 0) scale(1.35);
+    left: 50%;
+}
+
+.dice-instruction {
+    transition: all .5s ease;
+    opacity: 0;
+    transform: scale(0.1) translate(-50%, 0);
+    margin: 0;
+    line-height: 0;
+    position: absolute;
+    left: 50%;
+    top: 50px;
+}
+
+.bigDice .dice-instruction {
+    opacity: 1;
+    transform: scale(1) translate(-50%, 0);
+}
+
+.cube {
+    width: 100px;
+    height: 100px;
+    position: relative;
+    transform-style: preserve-3d;
+    transform: translateZ(-50px);
+    transition: transform .6s;
+}
+
+.cube.show-front  { transform: translateX(-8px) translateY(-121px) translateZ(-150px) rotateY(40deg) rotateX(30deg); }
+.scene:hover .cube.show-front  { transform: translateX(-8px) translateY(-121px) translateZ(-50px) rotateY(-150deg) rotateX(80deg); }
+.cube.show-left   { transform:  translateX(80px) translateY(20px) translateZ(-180px) rotateY(50deg) rotateX(70deg); }
+.scene:hover .cube.show-left   { transform:  translateX(120px) translateY(2px) translateZ(-80px) rotateY(200deg) rotateX(220deg); }
+
+.cube-face {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    border: 2px solid #230236;
+    line-height: 100px;
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    border-radius: 6px;
+    text-align: center;
+    backface-visibility: hidden;
+    background: #04010d;
+    padding: 16px;
+}
+
+.scene:hover .cube-face {
+    border: 2px solid #c40a29;
+	background-color: #140104;
+	box-shadow: 0 0 4px #c40a2966, 0 0 11px #c40a2955, 0 0 15px #c40a2944;
+}
+
+.front  { transform: rotateY(  0deg) translateZ(50px); }
+.right  { transform: rotateY( 90deg) translateZ(50px); }
+.back   { transform: rotateY(180deg) translateZ(50px); }
+.left   { transform: rotateY(-90deg) translateZ(50px); }
+.top    { transform: rotateX( 90deg) translateZ(50px); }
+.bottom { transform: rotateX(-90deg) translateZ(50px); }

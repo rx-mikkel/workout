@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700&display=swap');
+@import './dice.css';
 @import './deadlift.css';
 @import './squat.css';
 @import './lunge.css';
@@ -187,35 +188,6 @@ hr {
 	background-color: #000;
 	border: none;
 	height: 2px;
-}
-
-/* dice */
-
-.dice {
-	display: flex;
-	flex-direction: column;
-	align-items: end;
-}
-
-.bigDice {
-	align-items: center;
-	justify-content: center;
-	height: 20rem;
-}
-
-.bigDice .diceButton {
-	font-size: 6rem;
-	line-height: 6rem;
-}
-
-.diceButton {
-	transition: all .75s ease, border 1.25s ease, box-shadow 1.25s ease;
-}
-
-.diceButton:hover {
-	border: 2px solid #c40a29;
-	background-color: #c40a2922;
-	box-shadow: 0 0 4px #c40a2966, 0 0 11px #c40a2955, 0 0 15px #c40a2944;
 }
 
 /* workout */

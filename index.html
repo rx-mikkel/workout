@@ -47,7 +47,294 @@
 		<div class="band workout" x-data="workout()">
 			<div class="content" :class="{ 'ice' : settingsMenuOpen }" x-data="{ diceRolled: false }">
 				<div class="dice" :class="{ 'bigDice': !diceRolled }">
-					<button class="diceButton" @click="generateWorkout(), diceRolled = true">Roll</button>
+					<button class="diceButton" @click="generateWorkout(), diceRolled = true">
+						<div class="scene">
+							<div class="cube show-left">
+								<div class="cube-face front">
+									<div class="exercise-avatar">
+										<div class="bbdeadlift">
+											<div class="barbell">
+												<div class="plate left"></div>
+												<div class="plate left-inner"></div>
+												<div class="plate right-inner"></div>
+												<div class="plate right"></div>
+											</div>
+											<div class="body">
+												<div class="head"></div>
+												<div class="arm left-arm">
+													<div class="arm underarm"></div>
+												</div>
+												<div class="arm right-arm">
+													<div class="arm underarm"></div>
+												</div>
+												<div class="leg left-leg">
+													<div class="leg lower-leg"></div>
+												</div>
+												<div class="leg right-leg">
+													<div class="leg lower-leg"></div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="cube-face back">
+									<div class="exercise-avatar">
+										<div class="bbdeadlift">
+											<div class="barbell">
+												<div class="plate left"></div>
+												<div class="plate left-inner"></div>
+												<div class="plate right-inner"></div>
+												<div class="plate right"></div>
+											</div>
+											<div class="body">
+												<div class="head"></div>
+												<div class="arm left-arm">
+													<div class="arm underarm"></div>
+												</div>
+												<div class="arm right-arm">
+													<div class="arm underarm"></div>
+												</div>
+												<div class="leg left-leg">
+													<div class="leg lower-leg"></div>
+												</div>
+												<div class="leg right-leg">
+													<div class="leg lower-leg"></div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="cube-face right">
+									<div class="exercise-avatar">
+										<div class="lunge">
+											<div class="body">
+												<div class="head"></div>
+												<div class="arm left-arm">
+													<div class="arm underarm"></div>
+												</div>
+												<div class="arm right-arm">
+													<div class="arm underarm"></div>
+												</div>
+												<div class="leg left-leg">
+													<div class="leg lower-leg"></div>
+												</div>
+												<div class="leg right-leg">
+													<div class="leg lower-leg"></div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="cube-face left">
+									<div class="exercise-avatar">
+										<div class="lunge">
+											<div class="body">
+												<div class="head"></div>
+												<div class="arm left-arm">
+													<div class="arm underarm"></div>
+												</div>
+												<div class="arm right-arm">
+													<div class="arm underarm"></div>
+												</div>
+												<div class="leg left-leg">
+													<div class="leg lower-leg"></div>
+												</div>
+												<div class="leg right-leg">
+													<div class="leg lower-leg"></div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="cube-face top">
+									<div class="exercise-avatar">
+										<div class="squat">
+											<div class="body">
+												<div class="head"></div>
+												<div class="arm left-arm">
+													<div class="arm underarm"></div>
+												</div>
+												<div class="arm right-arm">
+													<div class="arm underarm"></div>
+												</div>
+												<div class="leg left-leg">
+													<div class="leg lower-leg"></div>
+												</div>
+												<div class="leg right-leg">
+													<div class="leg lower-leg"></div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="cube-face bottom">
+									<div class="exercise-avatar">
+										<div class="squat">
+											<div class="body">
+												<div class="head"></div>
+												<div class="arm left-arm">
+													<div class="arm underarm"></div>
+												</div>
+												<div class="arm right-arm">
+													<div class="arm underarm"></div>
+												</div>
+												<div class="leg left-leg">
+													<div class="leg lower-leg"></div>
+												</div>
+												<div class="leg right-leg">
+													<div class="leg lower-leg"></div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="cube show-front">
+								<div class="cube-face front">
+									<div class="exercise-avatar">
+										<div class="burpee">
+											<div class="body">
+												<div class="head"></div>
+												<div class="arm left-arm">
+													<div class="arm underarm"></div>
+												</div>
+												<div class="arm right-arm">
+													<div class="arm underarm"></div>
+												</div>
+												<div class="leg left-leg">
+													<div class="leg lower-leg"></div>
+												</div>
+												<div class="leg right-leg">
+													<div class="leg lower-leg"></div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="cube-face back">
+									<div class="exercise-avatar">
+										<div class="burpee">
+											<div class="body">
+												<div class="head"></div>
+												<div class="arm left-arm">
+													<div class="arm underarm"></div>
+												</div>
+												<div class="arm right-arm">
+													<div class="arm underarm"></div>
+												</div>
+												<div class="leg left-leg">
+													<div class="leg lower-leg"></div>
+												</div>
+												<div class="leg right-leg">
+													<div class="leg lower-leg"></div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="cube-face right">
+									<div class="exercise-avatar">
+										<div class="bbdeadlift">
+											<div class="barbell">
+												<div class="plate left"></div>
+												<div class="plate left-inner"></div>
+												<div class="plate right-inner"></div>
+												<div class="plate right"></div>
+											</div>
+											<div class="body">
+												<div class="head"></div>
+												<div class="arm left-arm">
+													<div class="arm underarm"></div>
+												</div>
+												<div class="arm right-arm">
+													<div class="arm underarm"></div>
+												</div>
+												<div class="leg left-leg">
+													<div class="leg lower-leg"></div>
+												</div>
+												<div class="leg right-leg">
+													<div class="leg lower-leg"></div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="cube-face left">
+									<div class="exercise-avatar">
+										<div class="bbdeadlift">
+											<div class="barbell">
+												<div class="plate left"></div>
+												<div class="plate left-inner"></div>
+												<div class="plate right-inner"></div>
+												<div class="plate right"></div>
+											</div>
+											<div class="body">
+												<div class="head"></div>
+												<div class="arm left-arm">
+													<div class="arm underarm"></div>
+												</div>
+												<div class="arm right-arm">
+													<div class="arm underarm"></div>
+												</div>
+												<div class="leg left-leg">
+													<div class="leg lower-leg"></div>
+												</div>
+												<div class="leg right-leg">
+													<div class="leg lower-leg"></div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="cube-face top">
+									<div class="exercise-avatar">
+										<div class="squat">
+											<div class="body">
+												<div class="head"></div>
+												<div class="arm left-arm">
+													<div class="arm underarm"></div>
+												</div>
+												<div class="arm right-arm">
+													<div class="arm underarm"></div>
+												</div>
+												<div class="leg left-leg">
+													<div class="leg lower-leg"></div>
+												</div>
+												<div class="leg right-leg">
+													<div class="leg lower-leg"></div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="cube-face bottom">
+									<div class="exercise-avatar">
+										<div class="squat">
+											<div class="body">
+												<div class="head"></div>
+												<div class="arm left-arm">
+													<div class="arm underarm"></div>
+												</div>
+												<div class="arm right-arm">
+													<div class="arm underarm"></div>
+												</div>
+												<div class="leg left-leg">
+													<div class="leg lower-leg"></div>
+												</div>
+												<div class="leg right-leg">
+													<div class="leg lower-leg"></div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</button>
+					<!--
+						<h2 class="dice-instruction">Roll the dice!</h2>
+					-->
+					
 				</div>
 				<template x-if="diceRolled">
 					<div class="workoutResult">
