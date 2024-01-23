@@ -71,7 +71,7 @@
     position: absolute;
     width: 100px;
     height: 100px;
-    border: 2px solid #230236;
+    border: 2px solid #29023f;
     line-height: 100px;
     font-size: 20px;
     font-weight: bold;
@@ -79,14 +79,15 @@
     border-radius: 6px;
     text-align: center;
     backface-visibility: hidden;
-    background: #04010d;
+    background: #08011a;
     padding: 16px;
+    box-shadow: 0 0 4px #29023f66, 0 0 11px #29023f55, 0 0 15px #29023f44;
 }
 
 .scene:hover .cube-face {
     border: 2px solid #c40a29;
 	background-color: #140104;
-	box-shadow: 0 0 4px #c40a2966, 0 0 11px #c40a2955, 0 0 15px #c40a2944;
+	box-shadow: 0 0 4px #c40a2966, 0 0 11px #c40a2955;
 }
 
 .front  { transform: rotateY(  0deg) translateZ(50px); }
