@@ -1,5 +1,16 @@
 .settingsButton {
-    padding: 0.5rem;
+    padding: 0.4rem 0.8rem;
+}
+
+.settingsButtonContent {
+    display: flex;
+    align-items: center;
+
+    .caption {
+        margin-right: 1rem;
+        font-size: 1.4rem;
+        margin-top: -2px;
+    }
 }
 
 .settingsButton:hover {
