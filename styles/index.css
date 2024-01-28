@@ -415,6 +415,14 @@ hr {
 	html {
 		font-size: 12px;
 	}
+
+	.wodEntry:first-of-type {
+		border-radius: 0;
+	}
+
+	.wodEntry:last-of-type {
+		border-radius: 0 0 0.5rem 0.5rem;
+	}
 }
 
 @media screen and (max-width: 40rem) {
