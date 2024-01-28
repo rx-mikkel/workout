@@ -14,7 +14,47 @@
 	<body x-data="{ settingsMenuOpen: $persist(true) }">
 		<header class="band">
 			<div class="content">
-				<button :class="{ 'transparent' : settingsMenuOpen === true }" x-on:click="settingsMenuOpen = true">Settings</button>
+				<button title="Settings" class="settingsButton" :class="{ 'transparent' : settingsMenuOpen === true }" x-on:click="settingsMenuOpen = true">
+					<div class="settingsRing">
+						<div class="settingsToothContainer">
+							<div class="settingsTooth"></div>
+						</div>
+						<div class="settingsToothContainer rotate30">
+							<div class="settingsTooth"></div>
+						</div>
+						<div class="settingsToothContainer rotate60">
+							<div class="settingsTooth"></div>
+						</div>
+						<div class="settingsToothContainer rotate90">
+							<div class="settingsTooth"></div>
+						</div>
+						<div class="settingsToothContainer rotate120">
+							<div class="settingsTooth"></div>
+						</div>
+						<div class="settingsToothContainer rotate150">
+							<div class="settingsTooth"></div>
+						</div>
+						<div class="settingsToothContainer rotate180">
+							<div class="settingsTooth"></div>
+						</div>
+						<div class="settingsToothContainer rotate210">
+							<div class="settingsTooth"></div>
+						</div>
+						<div class="settingsToothContainer rotate240">
+							<div class="settingsTooth"></div>
+						</div>
+						<div class="settingsToothContainer rotate270">
+							<div class="settingsTooth"></div>
+						</div>
+						<div class="settingsToothContainer rotate300">
+							<div class="settingsTooth"></div>
+						</div>
+						<div class="settingsToothContainer rotate330">
+							<div class="settingsTooth"></div>
+						</div>
+						<div class="settingsRingDetail"></div>
+					</div>
+				</button>
 			</div>
 		</header>
 		<div class="band settings" x-show="settingsMenuOpen">

@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700&display=swap');
+@import './settings.css';
 @import './dice.css';
 @import './deadlift.css';
 @import './squat.css';
@@ -108,7 +109,7 @@ button {
 	font-size: 1.5rem;
 	border-radius: 0.5rem;
 	cursor: pointer;
-	transition: all .25s ease;
+	transition: all .4s ease;
 
 	&.active {
 		border-color: #f1176a;
